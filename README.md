@@ -2,9 +2,10 @@
 
 - Creating react app
 - adding Tailwind css
+- Login page (for big form based app try to use Formik library easy to handle validation)
 -
 
-App Planning :
+# App Planning :
 
 - without Authentication
   SignIn/SignUp pages
