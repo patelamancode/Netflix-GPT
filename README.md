@@ -7,7 +7,7 @@
 - Login page (for big form based app try to use Formik library easy to handle validation)
 - Signup page
 - Form validation with error message ( by using useRef() hook)
--
+- Implementing AUth for signup/Signin by Firebase
 
 # App Planning :
 

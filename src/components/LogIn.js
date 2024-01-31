@@ -1,6 +1,11 @@
 import { useState, useRef } from "react";
 import Header from "./Header";
 import { loginDataValidation } from "../utils/validation";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../utils/firebase";
 
 const LogIn = () => {
   const [isLoginForm, setIsLoginForm] = useState(true);
@@ -18,7 +23,41 @@ const LogIn = () => {
       password.current.value
     );
     setErrorMessage(message);
-    // handle Auth for SignIn and SignUp
+    if (message) return;
+
+    if (!isLoginForm) {
+      // Auth for SignUp making api  call  for creating new user
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode + ":" + errorMessage);
+        });
+    } else {
+      // Auth for  SignIn by making api  call for existing user
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode + ":" + errorMessage);
+        });
+    }
   };
 
   return (
