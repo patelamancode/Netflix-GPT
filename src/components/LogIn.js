@@ -7,6 +7,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import HomeStatic from "../subComponents/HomeStatic";
+import { useNavigate } from "react-router-dom";
 
 const LogIn = () => {
   const [isLoginForm, setIsLoginForm] = useState(true);
@@ -15,6 +16,7 @@ const LogIn = () => {
   const email = useRef(null);
   const password = useRef(null);
   const name = useRef(null);
+  const navigate = useNavigate();
 
   const handleLoginMode = () => {
     setIsLoginForm(!isLoginForm);
@@ -35,9 +37,11 @@ const LogIn = () => {
         email.current.value,
         password.current.value
       )
+        // need to workhere today
         .then((userCredential) => {
           const user = userCredential.user;
           console.log(user);
+          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -54,6 +58,7 @@ const LogIn = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           console.log(user);
+          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;

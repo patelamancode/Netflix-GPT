@@ -19,4 +19,4 @@
 
 #
 
-- Avoiding multiple repeated dispatch for signin, signout, signup we use firebase utility onAuthStateChanged. andwrite tis api in root level.
+- Avoiding multiple repeated dispatch for signin, signout, signup we use firebase utility onAuthStateChanged. and write this api in root level.
