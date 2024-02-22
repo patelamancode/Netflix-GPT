@@ -10,9 +10,3 @@ export const loginDataValidation = (email, password) => {
 
   return null;
 };
-// export const loginFormNameValidation = (name) => {
-//   const isNameValid = /^[a-zA-Z]+(?: [a-zA-Z]+)+$/.test(name);
-//   if (!isNameValid) return "Please input valid  name";
-
-//   return null;
-// };

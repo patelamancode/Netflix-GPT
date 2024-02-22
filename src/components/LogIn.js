@@ -6,12 +6,15 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import HomeStatic from "../subComponents/HomeStatic";
 
 const LogIn = () => {
   const [isLoginForm, setIsLoginForm] = useState(true);
+  const [errorMessage, setErrorMessage] = useState(null);
+
   const email = useRef(null);
   const password = useRef(null);
-  const [errorMessage, setErrorMessage] = useState(null);
+  const name = useRef(null);
 
   const handleLoginMode = () => {
     setIsLoginForm(!isLoginForm);
@@ -79,6 +82,7 @@ const LogIn = () => {
         <h1 className="text-3xl my-6">{isLoginForm ? "Sign In" : "Sign Up"}</h1>
         {!isLoginForm && (
           <input
+            ref={name}
             type="text"
             placeholder="Full name"
             className="p-4 my-2 w-full text-white bg-black bg-opacity-65 rounded-lg border"
@@ -122,6 +126,7 @@ const LogIn = () => {
           </p>
         )}
       </form>
+      <HomeStatic />
     </>
   );
 };
