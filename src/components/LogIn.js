@@ -4,10 +4,13 @@ import { loginDataValidation } from "../utils/validation";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import HomeStatic from "../subComponents/HomeStatic";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/store/userSlice";
 
 const LogIn = () => {
   const [isLoginForm, setIsLoginForm] = useState(true);
@@ -17,6 +20,7 @@ const LogIn = () => {
   const password = useRef(null);
   const name = useRef(null);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleLoginMode = () => {
     setIsLoginForm(!isLoginForm);
@@ -37,11 +41,28 @@ const LogIn = () => {
         email.current.value,
         password.current.value
       )
-        // need to workhere today
         .then((userCredential) => {
           const user = userCredential.user;
+          // updating user
+          updateProfile(user, {
+            displayName: name.current.value,
+          })
+            .then(() => {
+              const { uid, email, password, displayName } = auth.currentUser;
+              dispatch(
+                addUser({
+                  uid: uid,
+                  email: email,
+                  password: password,
+                  displayName: displayName,
+                })
+              );
+              navigate("/browse");
+            })
+            .catch((error) => {
+              setErrorMessage("error from here");
+            });
           console.log(user);
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
