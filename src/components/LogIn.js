@@ -8,7 +8,6 @@ import {
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import HomeStatic from "../subComponents/HomeStatic";
-// import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/store/userSlice";
 
@@ -19,7 +18,6 @@ const LogIn = () => {
   const email = useRef(null);
   const password = useRef(null);
   const name = useRef(null);
-  // const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleLoginMode = () => {
@@ -73,11 +71,7 @@ const LogIn = () => {
         email.current.value,
         password.current.value
       )
-        .then((userCredential) => {
-          const user = userCredential.user;
-          console.log(user);
-          // navigate("/browse");
-        })
+        .then((userCredential) => {})
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
