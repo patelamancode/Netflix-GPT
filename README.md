@@ -20,7 +20,13 @@
 - fetching trailer video data from TMDB api and using useState to manage it, also store same data in store
 - implementing youtube embeded vedio code to render trailer
 - using Tailwind CSS clases to beautify it and make similar UI
-- Implementing secondary container
+- Implementing secondary container:
+- Create secContainer, movieList, movieCard
+- using TMDB CDN Url to fetch movie card image;
+- creating top-rated,upcoming custom hook to fetch seperatedata from TMDB movilist section.
+- update UI with all data.
+
+# need to fix scrollbar;
 
 # App Planning :
 

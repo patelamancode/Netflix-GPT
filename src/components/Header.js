@@ -41,7 +41,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="absolute z-10 flex justify-between bg-gradient-to-b from-black w-screen">
+    <div className="absolute z-10 flex justify-between bg-gradient-to-b from-black w-full">
       <img className=" w-1/5  mx-7 " src={APP_LOGO} alt="logo" />
       {user && (
         <div className="flex align-middle">
