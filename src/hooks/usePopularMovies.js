@@ -11,9 +11,7 @@ const usePopularMovies = () => {
       "https://api.themoviedb.org/3/movie/popular?page=1",
       API_OPTIONS
     );
-    console.log(res);
     const data = await res.json();
-    console.log(data);
     dispatch(addPopularMovie(data.results));
   };
   useEffect(() => {

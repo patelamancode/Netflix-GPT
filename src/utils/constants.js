@@ -10,3 +10,11 @@ export const API_OPTIONS = {
   },
 };
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w200";
+export const BG_URL =
+  "https://assets.nflxext.com/ffe/siteui/vlv3/32c47234-8398-4a4f-a6b5-6803881d38bf/eed3a573-8db7-47ca-a2ce-b511e0350439/IN-en-20240122-popsignuptwoweeks-perspective_alpha_website_large.jpg";
+
+export const language = [
+  { type: "en", name: "English" },
+  { type: "hindi", name: "Hindi" },
+  { type: "spanish", name: "Spanish" },
+];

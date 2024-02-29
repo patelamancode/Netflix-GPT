@@ -9,7 +9,7 @@ const BrowsePriContainer = () => {
   const nowPlayingMovie = movie[0];
   const { id, title, overview } = nowPlayingMovie;
   return (
-    <div>
+    <div className="w-full">
       <VideoTitle id={id} title={title} overview={overview} />
       <VideoBackground movieId={id} />
     </div>

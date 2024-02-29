@@ -25,6 +25,10 @@
 - using TMDB CDN Url to fetch movie card image;
 - creating top-rated,upcoming custom hook to fetch seperatedata from TMDB movilist section.
 - update UI with all data.
+- creating GPT page
+- creating search bar component
+- Feature IMP : Adding multi language feature for GPT page.
+-
 
 # need to fix scrollbar;
 

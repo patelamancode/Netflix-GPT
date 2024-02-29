@@ -20,3 +20,7 @@
 #
 
 - Avoiding multiple repeated dispatch for signin, signout, signup we use firebase utility onAuthStateChanged. and write this api in root level.
+
+# We are building a feature for GPT movie recommendation asper search text
+
+- we use GPT APIs to do this. These apis created by open ai,
